@@ -31,7 +31,6 @@ app.use("/messages", messageRoutes);
 /** 404 handler */
 
 app.use(function(req, res, next) {
-  console.log(req.body);
   const err = new ExpressError("Not Found", 404);
   return next(err);
 });

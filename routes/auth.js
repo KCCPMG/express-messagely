@@ -13,7 +13,6 @@ const jwt = require('jsonwebtoken');
 router.post('/login', async (req, res, next) => {
   try {
     const boolAuthenticated = await User.authenticate(req.body.username, req.body.password)
-    console.log(req.body, boolAuthenticated)
     if (boolAuthenticated) {
       await User.updateLoginTimestamp(req.body.username);
 
